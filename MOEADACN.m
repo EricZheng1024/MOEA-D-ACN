@@ -310,9 +310,9 @@ function Offspring = Operator_GA4CO(Parent,Parameter)
             %% Genetic operators for permutation based encoding
             % Order crossover
             Offspring = Parent1;
+            iden_index = zeros(1, N);
             if rand < prem_proC
                 k = randi(D,1,N);
-                iden_index = zeros(1, N);
                 for i = 1 : N
                     Offspring(i,k(i)+1:end) = setdiff(Parent2(i,:),Parent1(i,1:k(i)),'stable');
                     if all(Offspring(i,:) == Parent1(i,:)) || all(Offspring(i,:) == Parent2(i,:))
